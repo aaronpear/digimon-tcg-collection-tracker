@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.title {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid red;
+    padding: 2%;
+}
+
+.card-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.card {
+    margin: 1%;
+}
+
+.card-img {
+    width: 200px;
+    height: 275px;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    border: 1px solid red;
+    flex-flow: column wrap;
+}
