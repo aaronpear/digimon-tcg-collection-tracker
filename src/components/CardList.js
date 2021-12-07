@@ -10,9 +10,15 @@ const CardList = (props) => {
 
     return (
         <div className='card-list'>
-            {showChosenCards ? <></> : 
+            {showChosenCards ? 
             cards.map((card, index) => {
-                return <Card key={index} card={card} />;
+                if (chosenCards.includes(card.cardnumber)) {
+                    return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />
+                }
+                return null;
+            }) : 
+            cards.map((card, index) => {
+                return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />;
             })}
         </div>
     )
