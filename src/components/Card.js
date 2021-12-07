@@ -5,7 +5,7 @@ import useQuantityOwned from "./hooks/useQuantityOwned";
 
 const Card = (props) => {
     const { card, chosenCards, setChosenCards } = props;
-    const [quantityOwned, setQuantityOwned] = useQuantityOwned();
+    const [quantityOwned, setQuantityOwned] = useQuantityOwned(card.cardnumber);
 
     const handleChosenCardChange = (e) => {
         const tempCards = chosenCards;
