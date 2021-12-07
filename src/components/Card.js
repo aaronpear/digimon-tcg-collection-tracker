@@ -1,7 +1,17 @@
 import React from "react";
 import './Components.css';
-
+import styled from "styled-components";
 import useQuantityOwned from "./hooks/useQuantityOwned";
+
+const StyledImg = styled.img`
+    opacity: 50%;
+
+    :hover {
+        opacity: 100%;
+    }
+`
+
+
 
 const Card = (props) => {
     const { card, chosenCards, setChosenCards } = props;
@@ -33,7 +43,11 @@ const Card = (props) => {
 
     return (
         <div className='card'>
-            <img src={`https://images.digimoncard.io/images/cards/${card.cardnumber}.jpg`} alt={`${card.cardnumber}`} className='card-img' />
+            {
+            quantityOwned === 0 ?
+                <StyledImg src={`https://images.digimoncard.io/images/cards/${card.cardnumber}.jpg`} alt={`${card.cardnumber}`} className='card-img' /> :
+                <img src={`https://images.digimoncard.io/images/cards/${card.cardnumber}.jpg`} alt={`${card.cardnumber}`} className='card-img' />
+            }
             <div className='card-info'>
                 <p>{card.name}</p>
                 <p>{card.cardnumber}</p>
