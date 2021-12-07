@@ -10,6 +10,7 @@ const Card = (props) => {
             <div className='card-info'>
                 <p>{card.name}</p>
                 <p>{card.cardnumber}</p>
+                <button>Add to Collection List</button>
             </div>
         </div>
     )
