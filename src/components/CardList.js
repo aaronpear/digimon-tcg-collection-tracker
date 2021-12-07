@@ -18,7 +18,7 @@ const CardList = (props) => {
                 return null;
             }) : 
             cards.map((card, index) => {
-                return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />;
+                return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />
             })}
         </div>
     )

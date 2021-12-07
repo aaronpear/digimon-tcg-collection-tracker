@@ -5,23 +5,16 @@ const Card = (props) => {
     const { card, chosenCards, setChosenCards } = props;
 
     const handleChosenCardChange = (e) => {
-        console.log(chosenCards);
         const tempCards = chosenCards;
-        console.log(e.target.value);
-        if (!e.target.value) {
-            console.log(e.target.value);
-            console.log('removing card');
+
+        if (e.target.value === 'true') {
             setChosenCards(tempCards.filter((cardnum) => {
                 return cardnum !== card.cardnumber;
             }))
-        } else {
-            console.log(e.target.value);
-            console.log('adding card');
+        } else if (e.target.value === 'false') {
             tempCards.push(card.cardnumber) 
             setChosenCards(tempCards);
         }
-
-        console.log(chosenCards);
     }
 
     return (
