@@ -9,6 +9,7 @@ import CardList from './components/CardList';
 
 function App() {
   const [cards, setCards] = useState([]);
+  const [showChosenCards, setShowChosenCards] = useState('false');
 
   useEffect(() => {
     axios.get('https://digimoncard.io/api-public/getAllCards.php?sort=name&series=Digimon%20Card%20Game&sortdirection=asc')
@@ -22,8 +23,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <CardList cards={cards} />
+      <Header showChosenCards={showChosenCards} setShowChosenCards={setShowChosenCards} />
+      <CardList cards={cards} showChosenCards={showChosenCards} />
     </div>
   );
 }
