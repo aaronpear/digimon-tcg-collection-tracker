@@ -1,27 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from 'react-redux';
 import Card from "./Card";
 import './Components.css';
 import useChosenCards from "./hooks/useChosenCards";
+import { getData } from '../actions/actions';
 
 const CardList = (props) => {
-    const { cards, showChosenCards } = props;
+    const { data, showCustomList, getData } = props;
+
+    useEffect(() => {
+        getData();
+    }, [])
+
 
     const [chosenCards, setChosenCards] = useChosenCards();
 
+    console.log(props);
     return (
         <div className='card-list'>
-            {showChosenCards ? 
-            cards.map((card, index) => {
+            {showCustomList ? 
+            data.map((card, index) => {
                 if (chosenCards.includes(card.cardnumber)) {
                     return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />
                 }
                 return null;
             }) : 
-            cards.map((card, index) => {
+            data.map((card, index) => {
                 return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />
             })}
         </div>
     )
 }
 
-export default CardList;
+const mapStateToProps = (state) => {
+    return ({
+        data: state.data,
+        showCustomList: state.showCustomList
+    })
+}
+
+
+export default connect(mapStateToProps, { getData })(CardList);
