@@ -11,7 +11,7 @@ const Header = (props) => {
     return (
         <div className='header-container'>
             <header className='header'>
-                <h1 className='title'>Digimon TCG Checklist</h1>
+                <h1 className='title'>Digimon TCG Collection Tracker</h1>
                 <nav>
                     <div className='search-bar'>
                         <button>dropdown placeholder</button>
