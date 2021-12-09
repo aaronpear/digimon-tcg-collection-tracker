@@ -11,8 +11,6 @@ const StyledImg = styled.img`
     }
 `
 
-
-
 const Card = (props) => {
     const { card, chosenCards, setChosenCards } = props;
     const [quantityOwned, setQuantityOwned] = useQuantityOwned(card.cardnumber);
@@ -39,7 +37,6 @@ const Card = (props) => {
         setQuantityOwned(quantityOwned - 1)
         }
     }
-
 
     return (
         <div className='card'>

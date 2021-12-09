@@ -7,13 +7,11 @@ import { getData } from '../actions/actions';
 
 const CardList = (props) => {
     const { data, showCustomList, getData } = props;
+    const [chosenCards, setChosenCards] = useChosenCards();
 
     useEffect(() => {
         getData();
     }, [])
-
-
-    const [chosenCards, setChosenCards] = useChosenCards();
 
     console.log(props);
     return (
