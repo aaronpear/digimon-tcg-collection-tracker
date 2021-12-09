@@ -56,8 +56,8 @@ const Card = (props) => {
                 <button onClick={handleSubtract}>Subtract Owned</button>
                 {
                 !chosenCards.includes(card.cardnumber) ?                 
-                    <button onClick={handleChosenCardChange} value={false} >Add to Collection List</button> :
-                    <button onClick={handleChosenCardChange} value={true} >Remove From Collection List</button>
+                    <button onClick={handleChosenCardChange} value={false} >Add to Custom List</button> :
+                    <button onClick={handleChosenCardChange} value={true} >Remove From Custom List</button>
                 } 
             </div>
         </div>
