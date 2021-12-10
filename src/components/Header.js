@@ -1,12 +1,12 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { toggleCustomView } from "../actions/actions";
+import { changeView } from "../actions/actions";
 import './Components.css';
 
 const Header = (props) => {
 
-    const handleClick = () => {
-        props.toggleCustomView();
+    const handleClick = (e) => {
+        props.changeView(e.target.value);
     }
 
     return (
@@ -19,10 +19,10 @@ const Header = (props) => {
                         <input />
                     </div>
                     <div className='nav-buttons'>
-                        <button onClick={handleClick}>Toggle Custom View</button>
-                        <button>Function 2</button>
-                        <button>Function 3</button>
-                        <button>Function 4</button>
+                        <button onClick={handleClick} value=''>View All</button>
+                        <button onClick={handleClick} value='custom'>Custom View</button>
+                        <button onClick={handleClick} value='owned'>View Owned</button>
+                        <button onClick={handleClick} value='unowned'>View Unowned</button>
                     </div>
                 </nav>
             </header>
@@ -30,4 +30,4 @@ const Header = (props) => {
     )
 }
 
-export default connect(null, { toggleCustomView })(Header);
+export default connect(null, { changeView })(Header);

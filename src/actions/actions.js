@@ -3,7 +3,7 @@ import axios from 'axios';
 export const GET_DATA = "GET_DATA";
 export const GET_DATA_SUCCESS = "GET_DATA_SUCCESS";
 export const GET_DATA_FAIL = "GET_DATA_FAIL";
-export const TOGGLE_CUSTOM_VIEW = "TOGGLE_CUSTOM_VIEW";
+export const CHANGE_VIEW = "CHANGE_VIEW";
 
 export const getData = () => dispatch => {
     console.log('starting getData');
@@ -15,6 +15,6 @@ export const getData = () => dispatch => {
       .catch(err => dispatch({ type: GET_DATA_FAIL, payload: err }));
   };
 
-export const toggleCustomView = () => {
-    return ({ type: TOGGLE_CUSTOM_VIEW });
+export const changeView = (view) => {
+    return ({ type: CHANGE_VIEW, payload: view });
 }

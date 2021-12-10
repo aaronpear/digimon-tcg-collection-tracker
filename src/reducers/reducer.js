@@ -2,25 +2,24 @@ import {
     GET_DATA,
     GET_DATA_SUCCESS,
     GET_DATA_FAIL,
-    TOGGLE_CUSTOM_VIEW
+    CHANGE_VIEW
 } from '../actions/actions.js';
 
 const initialState = {
     data: [],
     error: '',
     isGetting: false,
-    showCustomList: true
+    view: 'custom'
 }
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case TOGGLE_CUSTOM_VIEW:
+        case CHANGE_VIEW:
             return {
                 ...state,
-                showCustomList: !state.showCustomList
+                view: action.payload
             }
         case GET_DATA:
-            console.log('getting data');
             return {
                 ...state,
                 isGetting: true,
