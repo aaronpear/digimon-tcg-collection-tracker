@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { changeView } from "../actions/actions";
+import { changeView } from "../actions/viewActions";
 import './Components.css';
 
 const Header = (props) => {

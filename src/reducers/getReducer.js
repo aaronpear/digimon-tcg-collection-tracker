@@ -1,24 +1,17 @@
 import {
     GET_DATA,
     GET_DATA_SUCCESS,
-    GET_DATA_FAIL,
-    CHANGE_VIEW
-} from '../actions/actions.js';
+    GET_DATA_FAIL
+} from '../actions/getActions';
 
 const initialState = {
     data: [],
     error: '',
     isGetting: false,
-    view: 'custom'
 }
 
-const reducer = (state = initialState, action) => {
+const getReducer = (state = initialState, action) => {
     switch(action.type) {
-        case CHANGE_VIEW:
-            return {
-                ...state,
-                view: action.payload
-            }
         case GET_DATA:
             return {
                 ...state,
@@ -42,4 +35,4 @@ const reducer = (state = initialState, action) => {
     }
 }
 
-export default reducer;
+export default getReducer;

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Card from "./Card";
 import './Components.css';
 import useChosenCards from "./hooks/useChosenCards";
-import { getData } from '../actions/actions';
+import { getData } from '../actions/getActions';
 
 const CardList = (props) => {
     const { data, view, getData } = props;
@@ -14,7 +14,6 @@ const CardList = (props) => {
     }, [])
 
     const switchView = () => {
-        console.log(view);
         switch (view) {
             case 'custom': 
                 return data.map((card, index) => {
@@ -24,13 +23,11 @@ const CardList = (props) => {
                     return null;
                 });
             default: return data.map((card, index) => {
-                console.log('all case');
                 return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />
             });
         }
     }
 
-    console.log(props);
     return (
         <div className='card-list'>
             {switchView()}
@@ -40,8 +37,8 @@ const CardList = (props) => {
 
 const mapStateToProps = (state) => {
     return ({
-        data: state.data,
-        view: state.view
+        data: state.get.data,
+        view: state.view.view
     })
 }
 
