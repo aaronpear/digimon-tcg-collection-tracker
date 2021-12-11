@@ -22,6 +22,20 @@ const CardList = (props) => {
                     }
                     return null;
                 });
+            case 'owned':
+                return data.map((card, index) => {
+                    if (localStorage.getItem(`${card.cardnumber} Owned`) > 0) {
+                        return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />
+                    }
+                    return null;
+                }) 
+            case 'unowned':
+                return data.map((card, index) => {
+                    if (localStorage.getItem(`${card.cardnumber} Owned`) === '0') {
+                        return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />
+                    }
+                    return null;
+                }) 
             default: return data.map((card, index) => {
                 return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />
             });
