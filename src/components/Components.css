@@ -13,7 +13,7 @@
 
 .title {
     align-self: center;
-    width: 700px;
+    width: 800px;
 }
 
 nav {
@@ -40,6 +40,18 @@ nav {
 
 
 
+
+@keyframes slidein {
+    from {
+      margin-top: 100%;
+    }
+  
+    to {
+      margin-top: 1%;
+    }
+  }
+
+
 .card-list {
     display: flex;
     flex-flow: row wrap;
@@ -48,8 +60,12 @@ nav {
 }
 
 .card {
+    animation: 1s slidein;
+    width: 200px;
     margin: 1%;
     border: 2px solid black;
+    background-color: white;
+    box-shadow: 5px 5px 5px black;
 }
 
 .card-img {
@@ -58,10 +74,18 @@ nav {
 }
 
 p {
-    text-align: center;
+    display: flex;
+    flex-wrap: row wrap;
+    margin-left: 25px;
 }
 
 .button-container {
     display: flex;
     flex-direction: column;
+    align-self: flex-end;
 }
+
+button {
+    background-color: whitesmoke;
+}
+
