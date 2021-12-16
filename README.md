@@ -15,6 +15,11 @@ https://digimon-tcg-collection-tracker.vercel.app/</p>
 <p>All data is set to local storage for future use.</p>
 <p>The default state for viewing is set to <b>'Custom'</b>.</p>
 
+<h4>Known Bugs</h4>
+<ul>
+  <li>'Add to Custom List' button doesn't re-render when adding to Custom</li>
+  <li>'Owned' view doesn't re-render when changing card quantity to 0</li>
+</ul>
 
 <h3>NOTE:</h3>
 <p>The current build does not currently correctly display the navigation bar of the app. When first opening the app, you will only see a black bar across the top as shown here:</p>
