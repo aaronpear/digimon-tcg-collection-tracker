@@ -43,7 +43,6 @@ const CardList = (props) => {
     }
 
     const filterBySearch = (cardArray) => {
-        console.log('entered search filter', cardArray);
         if (!searchValue) {
             return cardArray;
         } else if (searchType === 'name') {
