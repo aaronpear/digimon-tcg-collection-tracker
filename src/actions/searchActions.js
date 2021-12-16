@@ -6,6 +6,5 @@ export const setSearchValue = (searchValue) => {
 }
 
 export const setSearchType = (searchType) => {
-    console.log('entered searchType action');
     return ({ type: SET_SEARCH_TYPE, payload: searchType })
 }
