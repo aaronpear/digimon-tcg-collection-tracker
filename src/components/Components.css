@@ -1,9 +1,10 @@
 .header-container {
-    width: 100%;
-    height: auto;
+    width: 98.75%;
+    height: 100px;
     position: fixed;
     opacity: 100%;
-    background-color: whitesmoke;
+    background-color: white;
+    border: 3px solid black;
 }
 
 .header {
@@ -13,7 +14,7 @@
 
 .title {
     align-self: center;
-    width: 700px;
+    width: 800px;
 }
 
 nav {
@@ -40,6 +41,18 @@ nav {
 
 
 
+
+@keyframes slidein {
+    from {
+      opacity: 0%;
+    }
+  
+    to {
+      opacity: 100%;
+    }
+  }
+
+
 .card-list {
     display: flex;
     flex-flow: row wrap;
@@ -48,8 +61,12 @@ nav {
 }
 
 .card {
+    animation: 0.5s slidein;
+    width: 200px;
     margin: 1%;
-    border: 2px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.849);
+    background-color: rgba(255, 255, 255, 0.973);
+    box-shadow: 5px 5px 5px black;
 }
 
 .card-img {
@@ -58,10 +75,18 @@ nav {
 }
 
 p {
-    text-align: center;
+    display: flex;
+    flex-wrap: row wrap;
+    margin-left: 25px;
 }
 
 .button-container {
     display: flex;
     flex-direction: column;
+    align-self: flex-end;
 }
+
+button {
+    background-color: whitesmoke;
+}
+
