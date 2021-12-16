@@ -6,7 +6,7 @@ import useChosenCards from "./hooks/useChosenCards";
 import { getData } from '../actions/getActions';
 
 const CardList = (props) => {
-    const { data, view, getData } = props;
+    const { data, view, searchType, searchValue, getData } = props;
     const [chosenCards, setChosenCards] = useChosenCards();
 
     useEffect(() => {
@@ -42,9 +42,32 @@ const CardList = (props) => {
         }
     }
 
+    const filterBySearch = (cardArray) => {
+        console.log('entered search filter', cardArray);
+        if (!searchValue) {
+            return cardArray;
+        } else if (searchType === 'name') {
+            return cardArray.filter((card) => {
+                if (card) {
+                    return card.props.card.name.toLowerCase().includes(searchValue);
+                } else {
+                    return card;
+                }
+            })
+        } else if (searchType === 'cardnumber') {
+            return cardArray.filter((card) => {
+                if (card) {
+                    return card.props.card.cardnumber.toLowerCase().includes(searchValue);
+                } else {
+                    return card;
+                }
+            })
+        }
+    }
+
     return (
         <div className='card-list'>
-            {switchView()}
+            {filterBySearch(switchView())}
         </div>
     )
 }
@@ -52,7 +75,9 @@ const CardList = (props) => {
 const mapStateToProps = (state) => {
     return ({
         data: state.get.data,
-        view: state.view.view
+        view: state.view.view,
+        searchType: state.search.searchType,
+        searchValue: state.search.searchValue
     })
 }
 
