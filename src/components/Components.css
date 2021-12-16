@@ -1,9 +1,10 @@
 .header-container {
-    width: 100%;
-    height: auto;
+    width: 98.75%;
+    height: 11%;
     position: fixed;
     opacity: 100%;
-    background-color: whitesmoke;
+    background-color: white;
+    border: 3px solid black;
 }
 
 .header {
@@ -64,7 +65,7 @@ nav {
     width: 200px;
     margin: 1%;
     border: 2px solid black;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.842);
     box-shadow: 5px 5px 5px black;
 }
 
