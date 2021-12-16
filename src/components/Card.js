@@ -4,11 +4,11 @@ import styled from "styled-components";
 import useQuantityOwned from "./hooks/useQuantityOwned";
 
 const StyledImg = styled.img`
-    opacity: 50%;
+    /* opacity: 50%;
 
     :hover {
         opacity: 100%;
-    }
+    } */
 `
 
 const Card = (props) => {
@@ -49,13 +49,15 @@ const Card = (props) => {
                 <p>{card.name}</p>
                 <p>{card.cardnumber}</p>
                 <p>Quantity Owned: {quantityOwned}</p>
-                <button onClick={handleAdd}>Add Owned</button>
-                <button onClick={handleSubtract}>Subtract Owned</button>
-                {
-                !chosenCards.includes(card.cardnumber) ?                 
-                    <button onClick={handleChosenCardChange} value={false} >Add to Custom List</button> :
-                    <button onClick={handleChosenCardChange} value={true} >Remove From Custom List</button>
-                } 
+                <div className="button-container">
+                    <button onClick={handleAdd}>Add Owned</button>
+                    <button onClick={handleSubtract}>Subtract Owned</button>
+                    {
+                    !chosenCards.includes(card.cardnumber) ?                 
+                        <button onClick={handleChosenCardChange} value={false} >Add to Custom List</button> :
+                        <button onClick={handleChosenCardChange} value={true} >Remove From Custom List</button>
+                    } 
+                </div>
             </div>
         </div>
     )
