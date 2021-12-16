@@ -13,7 +13,7 @@ https://digimon-tcg-collection-tracker.vercel.app/</p>
   <li>View Cards by: <b>All</b>, <b>Custom</b>, <b>Owned</b>, or <b>Unowned</b>
 </ul>
 <p>All data is set to local storage for future use.</p>
-<p>The default state for viewing is set to 'Custom'.</p>
+<p>The default state for viewing is set to <b>'Custom'</b>.</p>
 
 
 <h3>NOTE:</h3>
