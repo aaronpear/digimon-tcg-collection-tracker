@@ -15,21 +15,21 @@ const CardList = (props) => {
 
     const switchView = () => {
         switch (view) {
-            case 'custom': 
+            case 'Custom': 
                 return data.map((card, index) => {
                     if (chosenCards.includes(card.cardnumber)) {
                         return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />
                     }
                     return null;
                 });
-            case 'owned':
+            case 'Owned':
                 return data.map((card, index) => {
                     if (localStorage.getItem(`${card.cardnumber} Owned`) > 0) {
                         return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />
                     }
                     return null;
                 }) 
-            case 'unowned':
+            case 'Unowned':
                 return data.map((card, index) => {
                     if (localStorage.getItem(`${card.cardnumber} Owned`) === '0') {
                         return <Card key={index} card={card} chosenCards={chosenCards} setChosenCards={setChosenCards} />
