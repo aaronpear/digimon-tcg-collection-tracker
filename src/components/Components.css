@@ -1,3 +1,11 @@
+.header-container {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    opacity: 100%;
+    background-color: whitesmoke;
+}
+
 .header {
     display: flex;
     margin: 0 20px;
@@ -32,17 +40,16 @@ nav {
 
 
 
-
-
-
 .card-list {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    padding-top: 100px;
 }
 
 .card {
     margin: 1%;
+    border: 2px solid black;
 }
 
 .card-img {
@@ -50,9 +57,11 @@ nav {
     height: 275px;
 }
 
-.card-info {
+p {
+    text-align: center;
+}
+
+.button-container {
     display: flex;
-    align-items: center;
-    border: 1px solid red;
-    flex-flow: column wrap;
+    flex-direction: column;
 }
