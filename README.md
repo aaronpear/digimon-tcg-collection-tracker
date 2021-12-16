@@ -17,8 +17,7 @@ https://digimon-tcg-collection-tracker.vercel.app/</p>
 
 
 <h3>NOTE:</h3>
-<p>The current build does not currently correctly display the navigation bar of the app. When first opening the app, you will only see a black bar <br />
-across the top as shown here:</p>
+<p>The current build does not currently correctly display the navigation bar of the app. When first opening the app, you will only see a black bar across the top as shown here:</p>
 
 <a href="https://ibb.co/N94rSx9"><img src="https://i.ibb.co/1rSM6Zr/Screen-Shot-2021-12-16-at-2-08-39-PM.png" alt="Screen-Shot-2021-12-16-at-2-08-39-PM" border="0"></a>
 
