@@ -42,16 +42,6 @@ nav {
 
 
 
-@keyframes slidein {
-    from {
-      opacity: 0%;
-    }
-  
-    to {
-      opacity: 100%;
-    }
-  }
-
 
 .card-list {
     display: flex;
@@ -61,7 +51,6 @@ nav {
 }
 
 .card {
-    animation: 0.5s slidein;
     width: 200px;
     margin: 1%;
     border: 2px solid rgba(0, 0, 0, 0.849);
