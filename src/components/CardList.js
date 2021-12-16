@@ -11,7 +11,7 @@ const CardList = (props) => {
 
     useEffect(() => {
         getData();
-    }, [])
+    }, [getData])
 
     const switchView = () => {
         switch (view) {

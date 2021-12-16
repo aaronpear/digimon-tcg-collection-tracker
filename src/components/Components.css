@@ -1,6 +1,6 @@
 .header-container {
     width: 98.75%;
-    height: 11%;
+    height: 100px;
     position: fixed;
     opacity: 100%;
     background-color: white;
@@ -44,11 +44,11 @@ nav {
 
 @keyframes slidein {
     from {
-      margin-top: 100%;
+      opacity: 0%;
     }
   
     to {
-      margin-top: 1%;
+      opacity: 100%;
     }
   }
 
@@ -61,10 +61,10 @@ nav {
 }
 
 .card {
-    animation: 1s slidein;
+    animation: 0.5s slidein;
     width: 200px;
     margin: 1%;
-    border: 2px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.849);
     background-color: rgba(255, 255, 255, 0.973);
     box-shadow: 5px 5px 5px black;
 }
