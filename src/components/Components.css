@@ -1,22 +1,39 @@
 .header {
     display: flex;
-    align-items: center;
-    border: 1px solid red;
+    margin: 0 20px;
 }
 
 .title {
-    text-align: center;
+    align-self: center;
+    width: 700px;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-    align-content: center;
-    align-items: center;
     width: 100%;
-    border: 1px solid red;
-    padding: 2%;
+    padding: 0.5%;
 }
+
+.search-container {
+    display: flex;
+    width: 50%;
+    align-items: flex-start;
+}
+
+.search-bar {
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.view-selector-container {
+    align-self: flex-start;
+}
+
+
+
+
+
 
 .card-list {
     display: flex;

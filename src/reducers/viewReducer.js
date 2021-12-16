@@ -3,7 +3,7 @@ import {
 } from '../actions/viewActions';
 
 const initialState = {
-    view: 'custom'
+    view: 'Custom'
 }
 
 const viewReducer = (state = initialState, action) => {
