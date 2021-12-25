@@ -15,19 +15,16 @@ const Card = (props) => {
     const { card, chosenCards, setChosenCards } = props;
     const [quantityOwned, setQuantityOwned] = useQuantityOwned(card.cardnumber);
 
-    const handleChosenCardChange = (e) => {
-        const tempCards = chosenCards;
-        
+    const handleChosenCardChange = (e) => {       
         // if the targeted card is a Chosen card, this statement will filter out the
         // card from the chosenCards state
         if (e.target.value === 'true') {
-            setChosenCards(tempCards.filter((cardnum) => {
+            setChosenCards(chosenCards.filter((cardnum) => {
                 return cardnum !== card.cardnumber;
             }))
         // if the targeted card doesn't exist in chosenCards, it will be added to chosenCards
         } else if (e.target.value === 'false') {
-            tempCards.push(card.cardnumber) 
-            setChosenCards(tempCards);
+            setChosenCards([...chosenCards, card.cardnumber]);
         }
     }
 
@@ -37,7 +34,7 @@ const Card = (props) => {
 
     const handleSubtract = () => {
         if (quantityOwned > 0) {
-        setQuantityOwned(quantityOwned - 1)
+        setQuantityOwned(quantityOwned - 1);
         }
     }
 
