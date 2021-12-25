@@ -17,11 +17,14 @@ const Card = (props) => {
 
     const handleChosenCardChange = (e) => {
         const tempCards = chosenCards;
-
+        
+        // if the targeted card is a Chosen card, this statement will filter out the
+        // card from the chosenCards state
         if (e.target.value === 'true') {
             setChosenCards(tempCards.filter((cardnum) => {
                 return cardnum !== card.cardnumber;
             }))
+        // if the targeted card doesn't exist in chosenCards, it will be added to chosenCards
         } else if (e.target.value === 'false') {
             tempCards.push(card.cardnumber) 
             setChosenCards(tempCards);
